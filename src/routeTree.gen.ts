@@ -9,8 +9,38 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WeddingsRouteImport } from './routes/weddings'
+import { Route as ParadisoRouteImport } from './routes/paradiso'
+import { Route as CorporateRouteImport } from './routes/corporate'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AzureRouteImport } from './routes/azure'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WeddingsRoute = WeddingsRouteImport.update({
+  id: '/weddings',
+  path: '/weddings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParadisoRoute = ParadisoRouteImport.update({
+  id: '/paradiso',
+  path: '/paradiso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CorporateRoute = CorporateRouteImport.update({
+  id: '/corporate',
+  path: '/corporate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AzureRoute = AzureRouteImport.update({
+  id: '/azure',
+  path: '/azure',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +49,96 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/azure': typeof AzureRoute
+  '/contact': typeof ContactRoute
+  '/corporate': typeof CorporateRoute
+  '/paradiso': typeof ParadisoRoute
+  '/weddings': typeof WeddingsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/azure': typeof AzureRoute
+  '/contact': typeof ContactRoute
+  '/corporate': typeof CorporateRoute
+  '/paradiso': typeof ParadisoRoute
+  '/weddings': typeof WeddingsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/azure': typeof AzureRoute
+  '/contact': typeof ContactRoute
+  '/corporate': typeof CorporateRoute
+  '/paradiso': typeof ParadisoRoute
+  '/weddings': typeof WeddingsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/azure'
+    | '/contact'
+    | '/corporate'
+    | '/paradiso'
+    | '/weddings'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/azure' | '/contact' | '/corporate' | '/paradiso' | '/weddings'
+  id:
+    | '__root__'
+    | '/'
+    | '/azure'
+    | '/contact'
+    | '/corporate'
+    | '/paradiso'
+    | '/weddings'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AzureRoute: typeof AzureRoute
+  ContactRoute: typeof ContactRoute
+  CorporateRoute: typeof CorporateRoute
+  ParadisoRoute: typeof ParadisoRoute
+  WeddingsRoute: typeof WeddingsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/weddings': {
+      id: '/weddings'
+      path: '/weddings'
+      fullPath: '/weddings'
+      preLoaderRoute: typeof WeddingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paradiso': {
+      id: '/paradiso'
+      path: '/paradiso'
+      fullPath: '/paradiso'
+      preLoaderRoute: typeof ParadisoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/corporate': {
+      id: '/corporate'
+      path: '/corporate'
+      fullPath: '/corporate'
+      preLoaderRoute: typeof CorporateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/azure': {
+      id: '/azure'
+      path: '/azure'
+      fullPath: '/azure'
+      preLoaderRoute: typeof AzureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +151,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AzureRoute: AzureRoute,
+  ContactRoute: ContactRoute,
+  CorporateRoute: CorporateRoute,
+  ParadisoRoute: ParadisoRoute,
+  WeddingsRoute: WeddingsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
