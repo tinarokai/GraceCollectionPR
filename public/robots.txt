@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Allow AI assistants
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+Sitemap: https://code-pal-post.lovable.app/sitemap.xml
