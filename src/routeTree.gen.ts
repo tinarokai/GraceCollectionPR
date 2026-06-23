@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WeddingsRouteImport } from './routes/weddings'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ParadisoRouteImport } from './routes/paradiso'
 import { Route as CorporateRouteImport } from './routes/corporate'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -19,6 +20,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const WeddingsRoute = WeddingsRouteImport.update({
   id: '/weddings',
   path: '/weddings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ParadisoRoute = ParadisoRouteImport.update({
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/corporate': typeof CorporateRoute
   '/paradiso': typeof ParadisoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/corporate': typeof CorporateRoute
   '/paradiso': typeof ParadisoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/corporate': typeof CorporateRoute
   '/paradiso': typeof ParadisoRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
 }
 export interface FileRouteTypes {
@@ -80,9 +89,17 @@ export interface FileRouteTypes {
     | '/contact'
     | '/corporate'
     | '/paradiso'
+    | '/sitemap.xml'
     | '/weddings'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/azure' | '/contact' | '/corporate' | '/paradiso' | '/weddings'
+  to:
+    | '/'
+    | '/azure'
+    | '/contact'
+    | '/corporate'
+    | '/paradiso'
+    | '/sitemap.xml'
+    | '/weddings'
   id:
     | '__root__'
     | '/'
@@ -90,6 +107,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/corporate'
     | '/paradiso'
+    | '/sitemap.xml'
     | '/weddings'
   fileRoutesById: FileRoutesById
 }
@@ -99,6 +117,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   CorporateRoute: typeof CorporateRoute
   ParadisoRoute: typeof ParadisoRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WeddingsRoute: typeof WeddingsRoute
 }
 
@@ -109,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/weddings'
       fullPath: '/weddings'
       preLoaderRoute: typeof WeddingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/paradiso': {
@@ -155,18 +181,9 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   CorporateRoute: CorporateRoute,
   ParadisoRoute: ParadisoRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   WeddingsRoute: WeddingsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

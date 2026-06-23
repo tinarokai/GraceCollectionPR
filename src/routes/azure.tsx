@@ -7,10 +7,24 @@ const HTML = "<header class=\"site-header\">\n  <div class=\"header-inner\">\n  
 export const Route = createFileRoute("/azure")({
   head: () => ({
     meta: [
-      { title: "Villa Azure \u2014 Grace Collection" },
-      { name: "description", content: "Villa Azure Ocean Suites \u2014 boutique 7-suite retreat in Ocean Park, San Juan, Puerto Rico. Part of the Grace Collection." },
-      { property: "og:title", content: "Villa Azure \u2014 Grace Collection" },
-      { property: "og:description", content: "Villa Azure Ocean Suites \u2014 boutique 7-suite retreat in Ocean Park, San Juan, Puerto Rico. Part of the Grace Collection." },
+      { title: "Villa Azure \u2014 Boutique Ocean Park Villa | Grace Collection" },
+      { name: "description", content: "Villa Azure: 7 contemporary suites, private pool, steps from Ocean Park Beach in San Juan, Puerto Rico. Designed by Steve Carril. Sleeps up to 16." },
+      { property: "og:title", content: "Villa Azure \u2014 Boutique Ocean Park Villa | Grace Collection" },
+      { property: "og:description", content: "Villa Azure: 7 contemporary suites, private pool, steps from Ocean Park Beach in San Juan, Puerto Rico. Designed by Steve Carril. Sleeps up to 16." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://code-pal-post.lovable.app/azure" },
+      { property: "og:image", content: "https://code-pal-post.lovable.app/assets/img/azure/2025/02/FOTO-VILLA-AZUR-1.webp" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Villa Azure \u2014 Boutique Ocean Park Villa | Grace Collection" },
+      { name: "twitter:description", content: "Villa Azure: 7 contemporary suites, private pool, steps from Ocean Park Beach in San Juan, Puerto Rico. Designed by Steve Carril. Sleeps up to 16." },
+      { name: "twitter:image", content: "https://code-pal-post.lovable.app/assets/img/azure/2025/02/FOTO-VILLA-AZUR-1.webp" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://code-pal-post.lovable.app/azure" },
+    ],
+    scripts: [
+      { type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"LodgingBusiness\", \"name\": \"Villa Azure\", \"url\": \"https://code-pal-post.lovable.app/azure\", \"image\": \"https://code-pal-post.lovable.app/assets/img/azure/2025/02/FOTO-VILLA-AZUR-1.webp\", \"description\": \"Villa Azure \\u2014 7 contemporary suites, private pool, steps from Ocean Park Beach in San Juan, Puerto Rico. Part of the Grace Collection.\", \"priceRange\": \"$$$$\", \"numberOfRooms\": 7, \"telephone\": \"+1-787-564-7405\", \"address\": {\"@type\": \"PostalAddress\", \"streetAddress\": \"5 C. Guerrero Noble\", \"addressLocality\": \"San Juan\", \"addressRegion\": \"PR\", \"postalCode\": \"00913\", \"addressCountry\": \"PR\"}, \"geo\": {\"@type\": \"GeoCoordinates\", \"latitude\": 18.4493, \"longitude\": -66.0654}, \"parentOrganization\": {\"@type\": \"Organization\", \"name\": \"Grace Collection\", \"url\": \"https://code-pal-post.lovable.app\"}}" },
+      { type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://code-pal-post.lovable.app/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Villa Azure\", \"item\": \"https://code-pal-post.lovable.app/azure\"}]}" },
     ],
   }),
   component: AzurePage,

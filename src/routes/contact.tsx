@@ -7,10 +7,24 @@ const HTML = "<header class=\"site-header\">\n  <div class=\"header-inner\">\n  
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact \u2014 Grace Collection" },
+      { title: "Contact Grace Collection | Villa Azure & Villa Paradiso, San Juan" },
       { name: "description", content: "Contact Grace Collection \u2014 Villa Azure and Villa Paradiso on Ocean Park, San Juan, Puerto Rico. Reservations, events, and concierge inquiries." },
-      { property: "og:title", content: "Contact \u2014 Grace Collection" },
+      { property: "og:title", content: "Contact Grace Collection | Villa Azure & Villa Paradiso, San Juan" },
       { property: "og:description", content: "Contact Grace Collection \u2014 Villa Azure and Villa Paradiso on Ocean Park, San Juan, Puerto Rico. Reservations, events, and concierge inquiries." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://code-pal-post.lovable.app/contact" },
+      { property: "og:image", content: "https://code-pal-post.lovable.app/assets/img/paradiso-real/exterior/villa-front.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Contact Grace Collection | Villa Azure & Villa Paradiso, San Juan" },
+      { name: "twitter:description", content: "Contact Grace Collection \u2014 Villa Azure and Villa Paradiso on Ocean Park, San Juan, Puerto Rico. Reservations, events, and concierge inquiries." },
+      { name: "twitter:image", content: "https://code-pal-post.lovable.app/assets/img/paradiso-real/exterior/villa-front.jpg" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://code-pal-post.lovable.app/contact" },
+    ],
+    scripts: [
+      { type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"ContactPage\", \"name\": \"Contact \\u2014 Grace Collection\", \"url\": \"https://code-pal-post.lovable.app/contact\"}" },
+      { type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://code-pal-post.lovable.app/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Contact\", \"item\": \"https://code-pal-post.lovable.app/contact\"}]}" },
     ],
   }),
   component: ContactPage,
