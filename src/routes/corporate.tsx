@@ -7,10 +7,24 @@ const HTML = "<header class=\"site-header\">\n  <div class=\"header-inner\">\n  
 export const Route = createFileRoute("/corporate")({
   head: () => ({
     meta: [
-      { title: "Corporate Retreats \u2014 Grace Collection" },
-      { name: "description", content: "Corporate retreats and events at Grace Collection \u2014 Villa Azure and Villa Paradiso, two oceanfront estates on Ocean Park, San Juan. Executive offsites, product launches, team-building, 200+ guest events." },
-      { property: "og:title", content: "Corporate Retreats \u2014 Grace Collection" },
-      { property: "og:description", content: "Corporate retreats and events at Grace Collection \u2014 Villa Azure and Villa Paradiso, two oceanfront estates on Ocean Park, San Juan. Executive offsites, product launches, team-building, 200+ guest events." },
+      { title: "Corporate Retreats & Offsites in San Juan | Grace Collection" },
+      { name: "description", content: "Corporate retreats at Grace Collection \u2014 Villa Azure and Villa Paradiso, two oceanfront estates on Ocean Park, San Juan. Executive offsites, product launches, team-building for 200+ guests." },
+      { property: "og:title", content: "Corporate Retreats & Offsites in San Juan | Grace Collection" },
+      { property: "og:description", content: "Corporate retreats at Grace Collection \u2014 Villa Azure and Villa Paradiso, two oceanfront estates on Ocean Park, San Juan. Executive offsites, product launches, team-building for 200+ guests." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://code-pal-post.lovable.app/corporate" },
+      { property: "og:image", content: "https://code-pal-post.lovable.app/assets/img/paradiso-real/exterior/villa-front.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Corporate Retreats & Offsites in San Juan | Grace Collection" },
+      { name: "twitter:description", content: "Corporate retreats at Grace Collection \u2014 Villa Azure and Villa Paradiso, two oceanfront estates on Ocean Park, San Juan. Executive offsites, product launches, team-building for 200+ guests." },
+      { name: "twitter:image", content: "https://code-pal-post.lovable.app/assets/img/paradiso-real/exterior/villa-front.jpg" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://code-pal-post.lovable.app/corporate" },
+    ],
+    scripts: [
+      { type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"EventVenue\", \"name\": \"Grace Collection Corporate Retreats\", \"url\": \"https://code-pal-post.lovable.app/corporate\", \"image\": \"https://code-pal-post.lovable.app/assets/img/paradiso-real/exterior/villa-front.jpg\", \"description\": \"Corporate retreat and offsite venues at Villa Azure and Villa Paradiso on Ocean Park, San Juan, Puerto Rico.\", \"maximumAttendeeCapacity\": 200, \"address\": {\"@type\": \"PostalAddress\", \"streetAddress\": \"1 Calle Guerrero Noble\", \"addressLocality\": \"San Juan\", \"addressRegion\": \"PR\", \"postalCode\": \"00913\", \"addressCountry\": \"PR\"}}" },
+      { type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://code-pal-post.lovable.app/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Corporate\", \"item\": \"https://code-pal-post.lovable.app/corporate\"}]}" },
     ],
   }),
   component: CorporatePage,

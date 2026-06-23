@@ -7,10 +7,24 @@ const HTML = "<header class=\"site-header\">\n  <div class=\"header-inner\">\n  
 export const Route = createFileRoute("/weddings")({
   head: () => ({
     meta: [
-      { title: "Weddings \u2014 Grace Collection" },
+      { title: "Beachfront Weddings in San Juan, PR | Grace Collection" },
       { name: "description", content: "Beachfront weddings at Grace Collection \u2014 Villa Azure & Villa Paradiso on Ocean Park, San Juan. Ceremony garden, glass pavilion, and oceanfront receptions for up to 200 guests." },
-      { property: "og:title", content: "Weddings \u2014 Grace Collection" },
+      { property: "og:title", content: "Beachfront Weddings in San Juan, PR | Grace Collection" },
       { property: "og:description", content: "Beachfront weddings at Grace Collection \u2014 Villa Azure & Villa Paradiso on Ocean Park, San Juan. Ceremony garden, glass pavilion, and oceanfront receptions for up to 200 guests." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://code-pal-post.lovable.app/weddings" },
+      { property: "og:image", content: "https://code-pal-post.lovable.app/assets/img/weddings/ceremony-arch.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Beachfront Weddings in San Juan, PR | Grace Collection" },
+      { name: "twitter:description", content: "Beachfront weddings at Grace Collection \u2014 Villa Azure & Villa Paradiso on Ocean Park, San Juan. Ceremony garden, glass pavilion, and oceanfront receptions for up to 200 guests." },
+      { name: "twitter:image", content: "https://code-pal-post.lovable.app/assets/img/weddings/ceremony-arch.jpg" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://code-pal-post.lovable.app/weddings" },
+    ],
+    scripts: [
+      { type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"EventVenue\", \"name\": \"Grace Collection Weddings\", \"url\": \"https://code-pal-post.lovable.app/weddings\", \"image\": \"https://code-pal-post.lovable.app/assets/img/weddings/ceremony-arch.jpg\", \"description\": \"Oceanfront wedding venues at Villa Azure and Villa Paradiso on Ocean Park, San Juan, Puerto Rico \\u2014 ceremony garden, glass pavilion, receptions up to 200 guests.\", \"maximumAttendeeCapacity\": 200, \"address\": {\"@type\": \"PostalAddress\", \"streetAddress\": \"1 Calle Guerrero Noble\", \"addressLocality\": \"San Juan\", \"addressRegion\": \"PR\", \"postalCode\": \"00913\", \"addressCountry\": \"PR\"}}" },
+      { type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://code-pal-post.lovable.app/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Weddings\", \"item\": \"https://code-pal-post.lovable.app/weddings\"}]}" },
     ],
   }),
   component: WeddingsPage,

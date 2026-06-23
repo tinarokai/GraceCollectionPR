@@ -7,10 +7,24 @@ const HTML = "<header class=\"site-header\">\n  <div class=\"header-inner\">\n  
 export const Route = createFileRoute("/paradiso")({
   head: () => ({
     meta: [
-      { title: "Villa Paradiso \u2014 Grace Collection" },
-      { name: "description", content: "Villa Paradiso \u2014 a private nine-bedroom oceanfront estate on Ocean Park, San Juan, Puerto Rico. Part of the Grace Collection." },
-      { property: "og:title", content: "Villa Paradiso \u2014 Grace Collection" },
-      { property: "og:description", content: "Villa Paradiso \u2014 a private nine-bedroom oceanfront estate on Ocean Park, San Juan, Puerto Rico. Part of the Grace Collection." },
+      { title: "Villa Paradiso \u2014 9-Suite Oceanfront Estate | Grace Collection" },
+      { name: "description", content: "Villa Paradiso: nine ocean suites, glass pavilion, ceremony garden on Ocean Park, San Juan, Puerto Rico. Built for weddings, retreats, and family reunions up to 200 guests." },
+      { property: "og:title", content: "Villa Paradiso \u2014 9-Suite Oceanfront Estate | Grace Collection" },
+      { property: "og:description", content: "Villa Paradiso: nine ocean suites, glass pavilion, ceremony garden on Ocean Park, San Juan, Puerto Rico. Built for weddings, retreats, and family reunions up to 200 guests." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://code-pal-post.lovable.app/paradiso" },
+      { property: "og:image", content: "https://code-pal-post.lovable.app/assets/img/paradiso-real/pool/main-pool-ocean-view.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Villa Paradiso \u2014 9-Suite Oceanfront Estate | Grace Collection" },
+      { name: "twitter:description", content: "Villa Paradiso: nine ocean suites, glass pavilion, ceremony garden on Ocean Park, San Juan, Puerto Rico. Built for weddings, retreats, and family reunions up to 200 guests." },
+      { name: "twitter:image", content: "https://code-pal-post.lovable.app/assets/img/paradiso-real/pool/main-pool-ocean-view.jpg" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://code-pal-post.lovable.app/paradiso" },
+    ],
+    scripts: [
+      { type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"LodgingBusiness\", \"name\": \"Villa Paradiso\", \"url\": \"https://code-pal-post.lovable.app/paradiso\", \"image\": \"https://code-pal-post.lovable.app/assets/img/paradiso-real/pool/main-pool-ocean-view.jpg\", \"description\": \"Villa Paradiso \\u2014 nine ocean suites and event venues on Ocean Park, San Juan, Puerto Rico. Part of the Grace Collection.\", \"priceRange\": \"$$$$\", \"numberOfRooms\": 9, \"telephone\": \"+1-561-289-2565\", \"address\": {\"@type\": \"PostalAddress\", \"streetAddress\": \"1 Calle Guerrero Noble\", \"addressLocality\": \"San Juan\", \"addressRegion\": \"PR\", \"postalCode\": \"00913\", \"addressCountry\": \"PR\"}, \"geo\": {\"@type\": \"GeoCoordinates\", \"latitude\": 18.4493, \"longitude\": -66.0654}, \"parentOrganization\": {\"@type\": \"Organization\", \"name\": \"Grace Collection\", \"url\": \"https://code-pal-post.lovable.app\"}}" },
+      { type: "application/ld+json", children: "{\"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [{\"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://code-pal-post.lovable.app/\"}, {\"@type\": \"ListItem\", \"position\": 2, \"name\": \"Villa Paradiso\", \"item\": \"https://code-pal-post.lovable.app/paradiso\"}]}" },
     ],
   }),
   component: ParadisoPage,
