@@ -126,7 +126,7 @@ h3{font-size:clamp(22px,2.6vw,30px)}
     linear-gradient(180deg, rgba(27,37,80,.55) 0%, rgba(27,37,80,.35) 35%, rgba(27,37,80,.78) 100%);
 }
 .hero-inner{position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:0 var(--gut);width:100%}
-.hero-eyebrow{color:var(--bronze-soft);margin-bottom:24px;display:block}
+.hero-eyebrow{color:#fff;margin-bottom:24px;display:block;font-size:12px;font-weight:600;letter-spacing:4.5px;text-shadow:0 1px 8px rgba(0,0,0,.35)}
 .hero h1{
   color:var(--parchment);font-weight:300;
   max-width:14ch;margin-bottom:24px;
