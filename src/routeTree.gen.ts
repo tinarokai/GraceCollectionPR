@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WeddingsRouteImport } from './routes/weddings'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ParadisoRouteImport } from './routes/paradiso'
+import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as CorporateRouteImport } from './routes/corporate'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AzureRouteImport } from './routes/azure'
@@ -37,6 +38,11 @@ const ParadisoRoute = ParadisoRouteImport.update({
   path: '/paradiso',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperiencesRoute = ExperiencesRouteImport.update({
+  id: '/experiences',
+  path: '/experiences',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CorporateRoute = CorporateRouteImport.update({
   id: '/corporate',
   path: '/corporate',
@@ -58,29 +64,29 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExperiencesIndexRoute = ExperiencesIndexRouteImport.update({
-  id: '/experiences/',
-  path: '/experiences/',
-  getParentRoute: () => rootRouteImport,
+  id: '/',
+  path: '/',
+  getParentRoute: () => ExperiencesRoute,
 } as any)
 const ExperiencesYogaRoute = ExperiencesYogaRouteImport.update({
-  id: '/experiences/yoga',
-  path: '/experiences/yoga',
-  getParentRoute: () => rootRouteImport,
+  id: '/yoga',
+  path: '/yoga',
+  getParentRoute: () => ExperiencesRoute,
 } as any)
 const ExperiencesSpaRoute = ExperiencesSpaRouteImport.update({
-  id: '/experiences/spa',
-  path: '/experiences/spa',
-  getParentRoute: () => rootRouteImport,
+  id: '/spa',
+  path: '/spa',
+  getParentRoute: () => ExperiencesRoute,
 } as any)
 const ExperiencesMassageRoute = ExperiencesMassageRouteImport.update({
-  id: '/experiences/massage',
-  path: '/experiences/massage',
-  getParentRoute: () => rootRouteImport,
+  id: '/massage',
+  path: '/massage',
+  getParentRoute: () => ExperiencesRoute,
 } as any)
 const ExperiencesKiteSurfingRoute = ExperiencesKiteSurfingRouteImport.update({
-  id: '/experiences/kite-surfing',
-  path: '/experiences/kite-surfing',
-  getParentRoute: () => rootRouteImport,
+  id: '/kite-surfing',
+  path: '/kite-surfing',
+  getParentRoute: () => ExperiencesRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/azure': typeof AzureRoute
   '/contact': typeof ContactRoute
   '/corporate': typeof CorporateRoute
+  '/experiences': typeof ExperiencesRouteWithChildren
   '/paradiso': typeof ParadisoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
@@ -117,6 +124,7 @@ export interface FileRoutesById {
   '/azure': typeof AzureRoute
   '/contact': typeof ContactRoute
   '/corporate': typeof CorporateRoute
+  '/experiences': typeof ExperiencesRouteWithChildren
   '/paradiso': typeof ParadisoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
@@ -133,6 +141,7 @@ export interface FileRouteTypes {
     | '/azure'
     | '/contact'
     | '/corporate'
+    | '/experiences'
     | '/paradiso'
     | '/sitemap.xml'
     | '/weddings'
@@ -161,6 +170,7 @@ export interface FileRouteTypes {
     | '/azure'
     | '/contact'
     | '/corporate'
+    | '/experiences'
     | '/paradiso'
     | '/sitemap.xml'
     | '/weddings'
@@ -176,14 +186,10 @@ export interface RootRouteChildren {
   AzureRoute: typeof AzureRoute
   ContactRoute: typeof ContactRoute
   CorporateRoute: typeof CorporateRoute
+  ExperiencesRoute: typeof ExperiencesRouteWithChildren
   ParadisoRoute: typeof ParadisoRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WeddingsRoute: typeof WeddingsRoute
-  ExperiencesKiteSurfingRoute: typeof ExperiencesKiteSurfingRoute
-  ExperiencesMassageRoute: typeof ExperiencesMassageRoute
-  ExperiencesSpaRoute: typeof ExperiencesSpaRoute
-  ExperiencesYogaRoute: typeof ExperiencesYogaRoute
-  ExperiencesIndexRoute: typeof ExperiencesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -207,6 +213,13 @@ declare module '@tanstack/react-router' {
       path: '/paradiso'
       fullPath: '/paradiso'
       preLoaderRoute: typeof ParadisoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences': {
+      id: '/experiences'
+      path: '/experiences'
+      fullPath: '/experiences'
+      preLoaderRoute: typeof ExperiencesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/corporate': {
@@ -239,55 +252,71 @@ declare module '@tanstack/react-router' {
     }
     '/experiences/': {
       id: '/experiences/'
-      path: '/experiences'
+      path: '/'
       fullPath: '/experiences/'
       preLoaderRoute: typeof ExperiencesIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ExperiencesRoute
     }
     '/experiences/yoga': {
       id: '/experiences/yoga'
-      path: '/experiences/yoga'
+      path: '/yoga'
       fullPath: '/experiences/yoga'
       preLoaderRoute: typeof ExperiencesYogaRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ExperiencesRoute
     }
     '/experiences/spa': {
       id: '/experiences/spa'
-      path: '/experiences/spa'
+      path: '/spa'
       fullPath: '/experiences/spa'
       preLoaderRoute: typeof ExperiencesSpaRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ExperiencesRoute
     }
     '/experiences/massage': {
       id: '/experiences/massage'
-      path: '/experiences/massage'
+      path: '/massage'
       fullPath: '/experiences/massage'
       preLoaderRoute: typeof ExperiencesMassageRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ExperiencesRoute
     }
     '/experiences/kite-surfing': {
       id: '/experiences/kite-surfing'
-      path: '/experiences/kite-surfing'
+      path: '/kite-surfing'
       fullPath: '/experiences/kite-surfing'
       preLoaderRoute: typeof ExperiencesKiteSurfingRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ExperiencesRoute
     }
   }
 }
+
+interface ExperiencesRouteChildren {
+  ExperiencesKiteSurfingRoute: typeof ExperiencesKiteSurfingRoute
+  ExperiencesMassageRoute: typeof ExperiencesMassageRoute
+  ExperiencesSpaRoute: typeof ExperiencesSpaRoute
+  ExperiencesYogaRoute: typeof ExperiencesYogaRoute
+  ExperiencesIndexRoute: typeof ExperiencesIndexRoute
+}
+
+const ExperiencesRouteChildren: ExperiencesRouteChildren = {
+  ExperiencesKiteSurfingRoute: ExperiencesKiteSurfingRoute,
+  ExperiencesMassageRoute: ExperiencesMassageRoute,
+  ExperiencesSpaRoute: ExperiencesSpaRoute,
+  ExperiencesYogaRoute: ExperiencesYogaRoute,
+  ExperiencesIndexRoute: ExperiencesIndexRoute,
+}
+
+const ExperiencesRouteWithChildren = ExperiencesRoute._addFileChildren(
+  ExperiencesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AzureRoute: AzureRoute,
   ContactRoute: ContactRoute,
   CorporateRoute: CorporateRoute,
+  ExperiencesRoute: ExperiencesRouteWithChildren,
   ParadisoRoute: ParadisoRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   WeddingsRoute: WeddingsRoute,
-  ExperiencesKiteSurfingRoute: ExperiencesKiteSurfingRoute,
-  ExperiencesMassageRoute: ExperiencesMassageRoute,
-  ExperiencesSpaRoute: ExperiencesSpaRoute,
-  ExperiencesYogaRoute: ExperiencesYogaRoute,
-  ExperiencesIndexRoute: ExperiencesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
