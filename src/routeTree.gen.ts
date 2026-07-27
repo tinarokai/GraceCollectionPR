@@ -17,6 +17,7 @@ import { Route as CorporateRouteImport } from './routes/corporate'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AzureRouteImport } from './routes/azure'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ExperiencesIndexRouteImport } from './routes/experiences.index'
 import { Route as ExperiencesYogaRouteImport } from './routes/experiences.yoga'
 import { Route as ExperiencesSpaRouteImport } from './routes/experiences.spa'
 import { Route as ExperiencesMassageRouteImport } from './routes/experiences.massage'
@@ -62,6 +63,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperiencesIndexRoute = ExperiencesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ExperiencesRoute,
+} as any)
 const ExperiencesYogaRoute = ExperiencesYogaRouteImport.update({
   id: '/yoga',
   path: '/yoga',
@@ -96,13 +102,13 @@ export interface FileRoutesByFullPath {
   '/experiences/massage': typeof ExperiencesMassageRoute
   '/experiences/spa': typeof ExperiencesSpaRoute
   '/experiences/yoga': typeof ExperiencesYogaRoute
+  '/experiences/': typeof ExperiencesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/azure': typeof AzureRoute
   '/contact': typeof ContactRoute
   '/corporate': typeof CorporateRoute
-  '/experiences': typeof ExperiencesRouteWithChildren
   '/paradiso': typeof ParadisoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
@@ -110,6 +116,7 @@ export interface FileRoutesByTo {
   '/experiences/massage': typeof ExperiencesMassageRoute
   '/experiences/spa': typeof ExperiencesSpaRoute
   '/experiences/yoga': typeof ExperiencesYogaRoute
+  '/experiences': typeof ExperiencesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -125,6 +132,7 @@ export interface FileRoutesById {
   '/experiences/massage': typeof ExperiencesMassageRoute
   '/experiences/spa': typeof ExperiencesSpaRoute
   '/experiences/yoga': typeof ExperiencesYogaRoute
+  '/experiences/': typeof ExperiencesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,13 +149,13 @@ export interface FileRouteTypes {
     | '/experiences/massage'
     | '/experiences/spa'
     | '/experiences/yoga'
+    | '/experiences/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/azure'
     | '/contact'
     | '/corporate'
-    | '/experiences'
     | '/paradiso'
     | '/sitemap.xml'
     | '/weddings'
@@ -155,6 +163,7 @@ export interface FileRouteTypes {
     | '/experiences/massage'
     | '/experiences/spa'
     | '/experiences/yoga'
+    | '/experiences'
   id:
     | '__root__'
     | '/'
@@ -169,6 +178,7 @@ export interface FileRouteTypes {
     | '/experiences/massage'
     | '/experiences/spa'
     | '/experiences/yoga'
+    | '/experiences/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -240,6 +250,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experiences/': {
+      id: '/experiences/'
+      path: '/'
+      fullPath: '/experiences/'
+      preLoaderRoute: typeof ExperiencesIndexRouteImport
+      parentRoute: typeof ExperiencesRoute
+    }
     '/experiences/yoga': {
       id: '/experiences/yoga'
       path: '/yoga'
@@ -276,6 +293,7 @@ interface ExperiencesRouteChildren {
   ExperiencesMassageRoute: typeof ExperiencesMassageRoute
   ExperiencesSpaRoute: typeof ExperiencesSpaRoute
   ExperiencesYogaRoute: typeof ExperiencesYogaRoute
+  ExperiencesIndexRoute: typeof ExperiencesIndexRoute
 }
 
 const ExperiencesRouteChildren: ExperiencesRouteChildren = {
@@ -283,6 +301,7 @@ const ExperiencesRouteChildren: ExperiencesRouteChildren = {
   ExperiencesMassageRoute: ExperiencesMassageRoute,
   ExperiencesSpaRoute: ExperiencesSpaRoute,
   ExperiencesYogaRoute: ExperiencesYogaRoute,
+  ExperiencesIndexRoute: ExperiencesIndexRoute,
 }
 
 const ExperiencesRouteWithChildren = ExperiencesRoute._addFileChildren(
