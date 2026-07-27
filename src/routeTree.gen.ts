@@ -17,6 +17,7 @@ import { Route as CorporateRouteImport } from './routes/corporate'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AzureRouteImport } from './routes/azure'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ExperiencesSpaRouteImport } from './routes/experiences.spa'
 
 const WeddingsRoute = WeddingsRouteImport.update({
   id: '/weddings',
@@ -58,26 +59,33 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperiencesSpaRoute = ExperiencesSpaRouteImport.update({
+  id: '/spa',
+  path: '/spa',
+  getParentRoute: () => ExperiencesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/azure': typeof AzureRoute
   '/contact': typeof ContactRoute
   '/corporate': typeof CorporateRoute
-  '/experiences': typeof ExperiencesRoute
+  '/experiences': typeof ExperiencesRouteWithChildren
   '/paradiso': typeof ParadisoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
+  '/experiences/spa': typeof ExperiencesSpaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/azure': typeof AzureRoute
   '/contact': typeof ContactRoute
   '/corporate': typeof CorporateRoute
-  '/experiences': typeof ExperiencesRoute
+  '/experiences': typeof ExperiencesRouteWithChildren
   '/paradiso': typeof ParadisoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
+  '/experiences/spa': typeof ExperiencesSpaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -85,10 +93,11 @@ export interface FileRoutesById {
   '/azure': typeof AzureRoute
   '/contact': typeof ContactRoute
   '/corporate': typeof CorporateRoute
-  '/experiences': typeof ExperiencesRoute
+  '/experiences': typeof ExperiencesRouteWithChildren
   '/paradiso': typeof ParadisoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
+  '/experiences/spa': typeof ExperiencesSpaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -101,6 +110,7 @@ export interface FileRouteTypes {
     | '/paradiso'
     | '/sitemap.xml'
     | '/weddings'
+    | '/experiences/spa'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -111,6 +121,7 @@ export interface FileRouteTypes {
     | '/paradiso'
     | '/sitemap.xml'
     | '/weddings'
+    | '/experiences/spa'
   id:
     | '__root__'
     | '/'
@@ -121,6 +132,7 @@ export interface FileRouteTypes {
     | '/paradiso'
     | '/sitemap.xml'
     | '/weddings'
+    | '/experiences/spa'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -128,7 +140,7 @@ export interface RootRouteChildren {
   AzureRoute: typeof AzureRoute
   ContactRoute: typeof ContactRoute
   CorporateRoute: typeof CorporateRoute
-  ExperiencesRoute: typeof ExperiencesRoute
+  ExperiencesRoute: typeof ExperiencesRouteWithChildren
   ParadisoRoute: typeof ParadisoRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WeddingsRoute: typeof WeddingsRoute
@@ -192,15 +204,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experiences/spa': {
+      id: '/experiences/spa'
+      path: '/spa'
+      fullPath: '/experiences/spa'
+      preLoaderRoute: typeof ExperiencesSpaRouteImport
+      parentRoute: typeof ExperiencesRoute
+    }
   }
 }
+
+interface ExperiencesRouteChildren {
+  ExperiencesSpaRoute: typeof ExperiencesSpaRoute
+}
+
+const ExperiencesRouteChildren: ExperiencesRouteChildren = {
+  ExperiencesSpaRoute: ExperiencesSpaRoute,
+}
+
+const ExperiencesRouteWithChildren = ExperiencesRoute._addFileChildren(
+  ExperiencesRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AzureRoute: AzureRoute,
   ContactRoute: ContactRoute,
   CorporateRoute: CorporateRoute,
-  ExperiencesRoute: ExperiencesRoute,
+  ExperiencesRoute: ExperiencesRouteWithChildren,
   ParadisoRoute: ParadisoRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   WeddingsRoute: WeddingsRoute,
