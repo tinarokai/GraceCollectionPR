@@ -20,6 +20,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ExperiencesYogaRouteImport } from './routes/experiences.yoga'
 import { Route as ExperiencesSpaRouteImport } from './routes/experiences.spa'
 import { Route as ExperiencesMassageRouteImport } from './routes/experiences.massage'
+import { Route as ExperiencesKiteSurfingRouteImport } from './routes/experiences.kite-surfing'
 
 const WeddingsRoute = WeddingsRouteImport.update({
   id: '/weddings',
@@ -76,6 +77,11 @@ const ExperiencesMassageRoute = ExperiencesMassageRouteImport.update({
   path: '/massage',
   getParentRoute: () => ExperiencesRoute,
 } as any)
+const ExperiencesKiteSurfingRoute = ExperiencesKiteSurfingRouteImport.update({
+  id: '/kite-surfing',
+  path: '/kite-surfing',
+  getParentRoute: () => ExperiencesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -86,6 +92,7 @@ export interface FileRoutesByFullPath {
   '/paradiso': typeof ParadisoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
+  '/experiences/kite-surfing': typeof ExperiencesKiteSurfingRoute
   '/experiences/massage': typeof ExperiencesMassageRoute
   '/experiences/spa': typeof ExperiencesSpaRoute
   '/experiences/yoga': typeof ExperiencesYogaRoute
@@ -99,6 +106,7 @@ export interface FileRoutesByTo {
   '/paradiso': typeof ParadisoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
+  '/experiences/kite-surfing': typeof ExperiencesKiteSurfingRoute
   '/experiences/massage': typeof ExperiencesMassageRoute
   '/experiences/spa': typeof ExperiencesSpaRoute
   '/experiences/yoga': typeof ExperiencesYogaRoute
@@ -113,6 +121,7 @@ export interface FileRoutesById {
   '/paradiso': typeof ParadisoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
+  '/experiences/kite-surfing': typeof ExperiencesKiteSurfingRoute
   '/experiences/massage': typeof ExperiencesMassageRoute
   '/experiences/spa': typeof ExperiencesSpaRoute
   '/experiences/yoga': typeof ExperiencesYogaRoute
@@ -128,6 +137,7 @@ export interface FileRouteTypes {
     | '/paradiso'
     | '/sitemap.xml'
     | '/weddings'
+    | '/experiences/kite-surfing'
     | '/experiences/massage'
     | '/experiences/spa'
     | '/experiences/yoga'
@@ -141,6 +151,7 @@ export interface FileRouteTypes {
     | '/paradiso'
     | '/sitemap.xml'
     | '/weddings'
+    | '/experiences/kite-surfing'
     | '/experiences/massage'
     | '/experiences/spa'
     | '/experiences/yoga'
@@ -154,6 +165,7 @@ export interface FileRouteTypes {
     | '/paradiso'
     | '/sitemap.xml'
     | '/weddings'
+    | '/experiences/kite-surfing'
     | '/experiences/massage'
     | '/experiences/spa'
     | '/experiences/yoga'
@@ -249,16 +261,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperiencesMassageRouteImport
       parentRoute: typeof ExperiencesRoute
     }
+    '/experiences/kite-surfing': {
+      id: '/experiences/kite-surfing'
+      path: '/kite-surfing'
+      fullPath: '/experiences/kite-surfing'
+      preLoaderRoute: typeof ExperiencesKiteSurfingRouteImport
+      parentRoute: typeof ExperiencesRoute
+    }
   }
 }
 
 interface ExperiencesRouteChildren {
+  ExperiencesKiteSurfingRoute: typeof ExperiencesKiteSurfingRoute
   ExperiencesMassageRoute: typeof ExperiencesMassageRoute
   ExperiencesSpaRoute: typeof ExperiencesSpaRoute
   ExperiencesYogaRoute: typeof ExperiencesYogaRoute
 }
 
 const ExperiencesRouteChildren: ExperiencesRouteChildren = {
+  ExperiencesKiteSurfingRoute: ExperiencesKiteSurfingRoute,
   ExperiencesMassageRoute: ExperiencesMassageRoute,
   ExperiencesSpaRoute: ExperiencesSpaRoute,
   ExperiencesYogaRoute: ExperiencesYogaRoute,
