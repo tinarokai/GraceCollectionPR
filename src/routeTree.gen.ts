@@ -17,6 +17,7 @@ import { Route as CorporateRouteImport } from './routes/corporate'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AzureRouteImport } from './routes/azure'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ExperiencesYogaRouteImport } from './routes/experiences.yoga'
 import { Route as ExperiencesSpaRouteImport } from './routes/experiences.spa'
 
 const WeddingsRoute = WeddingsRouteImport.update({
@@ -59,6 +60,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExperiencesYogaRoute = ExperiencesYogaRouteImport.update({
+  id: '/yoga',
+  path: '/yoga',
+  getParentRoute: () => ExperiencesRoute,
+} as any)
 const ExperiencesSpaRoute = ExperiencesSpaRouteImport.update({
   id: '/spa',
   path: '/spa',
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
   '/experiences/spa': typeof ExperiencesSpaRoute
+  '/experiences/yoga': typeof ExperiencesYogaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
   '/experiences/spa': typeof ExperiencesSpaRoute
+  '/experiences/yoga': typeof ExperiencesYogaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -98,6 +106,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
   '/experiences/spa': typeof ExperiencesSpaRoute
+  '/experiences/yoga': typeof ExperiencesYogaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -111,6 +120,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/weddings'
     | '/experiences/spa'
+    | '/experiences/yoga'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -122,6 +132,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/weddings'
     | '/experiences/spa'
+    | '/experiences/yoga'
   id:
     | '__root__'
     | '/'
@@ -133,6 +144,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/weddings'
     | '/experiences/spa'
+    | '/experiences/yoga'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -204,6 +216,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/experiences/yoga': {
+      id: '/experiences/yoga'
+      path: '/yoga'
+      fullPath: '/experiences/yoga'
+      preLoaderRoute: typeof ExperiencesYogaRouteImport
+      parentRoute: typeof ExperiencesRoute
+    }
     '/experiences/spa': {
       id: '/experiences/spa'
       path: '/spa'
@@ -216,10 +235,12 @@ declare module '@tanstack/react-router' {
 
 interface ExperiencesRouteChildren {
   ExperiencesSpaRoute: typeof ExperiencesSpaRoute
+  ExperiencesYogaRoute: typeof ExperiencesYogaRoute
 }
 
 const ExperiencesRouteChildren: ExperiencesRouteChildren = {
   ExperiencesSpaRoute: ExperiencesSpaRoute,
+  ExperiencesYogaRoute: ExperiencesYogaRoute,
 }
 
 const ExperiencesRouteWithChildren = ExperiencesRoute._addFileChildren(
