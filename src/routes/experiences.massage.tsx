@@ -8,7 +8,7 @@ const data: ExperienceContent = {
   name: "Massage",
   eyebrow: "Experiences · Grace Collection",
   tagline: "Deep tissue, Swedish, couples, or hot stone — brought to your door by licensed local therapists.",
-  heroImage: "/assets/img/azure/2024/12/Exclusive-Villa-34.webp",
+  heroImage: "/assets/img/experiences/massage-back.jpg",
   heroAlt: "In-suite massage at Villa Azure",
   intro:
     "Skip the drive, skip the changing room. Grace Collection's massage service brings the table, the linens, the oils, and a licensed therapist to your suite. Couples treatments unfold side by side; solo sessions on your private terrace with the ocean as the soundtrack.",
@@ -17,7 +17,7 @@ const data: ExperienceContent = {
       title: "The full menu, in your suite.",
       body:
         "Swedish, deep tissue, sports recovery, prenatal, reflexology, and Caribbean-inspired hot stone. Choose the modality; we handle the rest — table, warmed linens, oils, and music.",
-      image: "/assets/img/azure/2024/12/Exclusive-Villa-29.webp",
+      image: "/assets/img/experiences/massage-hands.jpg",
       alt: "Private massage setting",
     },
     {
@@ -46,11 +46,11 @@ export const Route = createFileRoute("/experiences/massage")({
       { property: "og:description", content: "Deep tissue, Swedish, hot stone, and couples massage in your suite at Grace Collection." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://code-pal-post.lovable.app/experiences/massage" },
-      { property: "og:image", content: "https://code-pal-post.lovable.app/assets/img/azure/2024/12/Exclusive-Villa-34.webp" },
+      { property: "og:image", content: "https://code-pal-post.lovable.app/assets/img/experiences/massage-back.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "In-Suite Massage in San Juan, PR | Grace Collection" },
       { name: "twitter:description", content: "Deep tissue, Swedish, hot stone, and couples massage in your suite." },
-      { name: "twitter:image", content: "https://code-pal-post.lovable.app/assets/img/azure/2024/12/Exclusive-Villa-34.webp" },
+      { name: "twitter:image", content: "https://code-pal-post.lovable.app/assets/img/experiences/massage-back.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://code-pal-post.lovable.app/experiences/massage" }],
     scripts: [

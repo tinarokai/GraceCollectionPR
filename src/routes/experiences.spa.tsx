@@ -8,7 +8,7 @@ const data: ExperienceContent = {
   name: "Spa",
   eyebrow: "Experiences · Grace Collection",
   tagline: "No spa walls, no waiting rooms — the full spa experience, delivered to your suite.",
-  heroImage: "/assets/img/azure/2024/12/Exclusive-Villa-29.webp",
+  heroImage: "/assets/img/experiences/spa-stones.jpg",
   heroAlt: "In-suite spa treatment at Villa Azure",
   intro:
     "Grace Collection's spa program brings licensed therapists and estheticians directly to your suite, garden, or poolside cabana. There's no schedule to keep and no queue to wait in — treatments unfold at your pace, in the setting you're already enjoying.",
@@ -17,7 +17,7 @@ const data: ExperienceContent = {
       title: "Facials tailored to Caribbean light.",
       body:
         "Deep-cleansing, hydrating, anti-aging, and brightening protocols using clean, professional-grade skincare. Every facial is customized to your skin's needs after sun, salt, and travel — because Puerto Rico's climate calls for its own approach.",
-      image: "/assets/img/azure/2024/12/Exclusive-Villa-34.webp",
+      image: "/assets/img/experiences/spa-oil.jpg",
       alt: "In-suite facial treatment",
     },
     {
@@ -46,11 +46,11 @@ export const Route = createFileRoute("/experiences/spa")({
       { property: "og:description", content: "Facials, body treatments, and Caribbean rituals delivered to your suite at Grace Collection." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://code-pal-post.lovable.app/experiences/spa" },
-      { property: "og:image", content: "https://code-pal-post.lovable.app/assets/img/azure/2024/12/Exclusive-Villa-29.webp" },
+      { property: "og:image", content: "https://code-pal-post.lovable.app/assets/img/experiences/spa-stones.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "In-Suite Spa in San Juan, PR | Grace Collection" },
       { name: "twitter:description", content: "Facials, body treatments, and Caribbean rituals delivered to your suite." },
-      { name: "twitter:image", content: "https://code-pal-post.lovable.app/assets/img/azure/2024/12/Exclusive-Villa-29.webp" },
+      { name: "twitter:image", content: "https://code-pal-post.lovable.app/assets/img/experiences/spa-stones.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://code-pal-post.lovable.app/experiences/spa" }],
     scripts: [

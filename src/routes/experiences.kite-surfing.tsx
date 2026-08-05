@@ -8,7 +8,7 @@ const data: ExperienceContent = {
   name: "Kite Surfing",
   eyebrow: "Experiences · Grace Collection",
   tagline: "Ocean Park is one of Puerto Rico's best-known kiteboarding spots — and the villas sit right on the sand.",
-  heroImage: "/assets/img/paradiso-real/pool/side-patio-ocean.jpg",
+  heroImage: "/assets/img/experiences/kitesurf-sunset.jpg",
   heroAlt: "Kitesurfing at Ocean Park Beach",
   intro:
     "Steady Atlantic trade winds, a shallow reef-protected bay, and warm water year-round make Ocean Park one of the top kiteboarding destinations in the Caribbean. Grace Collection's concierge arranges lessons, rentals, and downwinders with the beach's most trusted local schools — steps from your suite.",
@@ -17,14 +17,14 @@ const data: ExperienceContent = {
       title: "Lessons for every level.",
       body:
         "Never touched a kite? IKO-certified instructors will have you up and riding in a few sessions. Already independent? Book advanced coaching, gear tuning, or a downwinder along the north coast.",
-      image: "/assets/img/paradiso-real/pool/side-patio-ocean.jpg",
+      image: "/assets/img/experiences/kitesurf-launch.jpg",
       alt: "Ocean Park beachfront",
     },
     {
       title: "Rentals and storage on-site.",
       body:
         "Bring your own gear or rent from our partners. We coordinate delivery to the villa, storage between sessions, and rigging on the beach so you spend your time on the water — not with a pump.",
-      image: "/assets/img/paradiso-real/pool/main-pool-ocean-view.jpg",
+      image: "/assets/img/experiences/kitesurf-action.jpg",
       alt: "Villa Paradiso pool with ocean views",
     },
   ],
@@ -46,11 +46,11 @@ export const Route = createFileRoute("/experiences/kite-surfing")({
       { property: "og:description", content: "IKO-certified lessons, gear rentals, and downwinders on Ocean Park's famous kite beach." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://code-pal-post.lovable.app/experiences/kite-surfing" },
-      { property: "og:image", content: "https://code-pal-post.lovable.app/assets/img/paradiso-real/pool/side-patio-ocean.jpg" },
+      { property: "og:image", content: "https://code-pal-post.lovable.app/assets/img/experiences/kitesurf-sunset.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Kitesurfing on Ocean Park, San Juan | Grace Collection" },
       { name: "twitter:description", content: "IKO-certified lessons, gear rentals, and downwinders on Ocean Park's famous kite beach." },
-      { name: "twitter:image", content: "https://code-pal-post.lovable.app/assets/img/paradiso-real/pool/side-patio-ocean.jpg" },
+      { name: "twitter:image", content: "https://code-pal-post.lovable.app/assets/img/experiences/kitesurf-sunset.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://code-pal-post.lovable.app/experiences/kite-surfing" }],
     scripts: [
