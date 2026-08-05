@@ -609,3 +609,10 @@ h3{font-size:clamp(22px,2.6vw,30px)}
 .exp-body p{color:rgba(16,24,38,.75);max-width:52ch;margin-bottom:10px}
 .exp-tags{font-family:var(--label);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);margin:14px 0 22px}
 @media(max-width:860px){.exp-row{grid-template-columns:1fr}.exp-row:nth-child(even) .exp-media{order:0}}
+
+/* Experience pages — offerings list */
+.offer-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(32px,5vw,72px);margin-top:clamp(28px,4vw,48px)}
+.offer-item{padding:22px 0;border-top:1px solid var(--line)}
+.offer-item h4{font-family:var(--display);font-size:19px;color:var(--atlantic);margin-bottom:6px}
+.offer-item p{color:rgba(16,24,38,.72);font-size:15px}
+@media(max-width:700px){.offer-list{grid-template-columns:1fr}}

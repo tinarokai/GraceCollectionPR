@@ -148,21 +148,24 @@ export function ExperienceTemplate({ data }: { data: ExperienceContent }) {
         </div>
       </section>
 
-      {data.sections.map((s, i) => (
-        <section key={i} className={`section ${i % 2 === 0 ? "" : "section-cream"}`}>
-          <div className="container">
-            <div className="both-villas-grid">
-              <div className={`fade-up ${i % 2 === 0 ? "" : "order-2"}`} style={i % 2 === 1 ? { order: 2 } : undefined}>
-                <h2>{s.title}</h2>
-                <p style={{ fontSize: 17, marginTop: 12 }}>{s.body}</p>
+      <section className="section">
+        <div className="container">
+          <div className="exp-rows" style={{ marginTop: 0 }}>
+            {data.sections.map((s, i) => (
+              <div key={i} className="exp-row fade-up">
+                <div className="exp-media">
+                  <span className="exp-num">{String(i + 1).padStart(2, "0")}</span>
+                  <img src={s.image} alt={s.alt} loading="lazy" />
+                </div>
+                <div className="exp-body">
+                  <h3>{s.title}</h3>
+                  <p>{s.body}</p>
+                </div>
               </div>
-              <div className="both-villas-media fade-up" style={i % 2 === 1 ? { order: 1 } : undefined}>
-                <img src={s.image} alt={s.alt} />
-              </div>
-            </div>
+            ))}
           </div>
-        </section>
-      ))}
+        </div>
+      </section>
 
       <section className="section section-cream">
         <div className="container">
@@ -171,14 +174,12 @@ export function ExperienceTemplate({ data }: { data: ExperienceContent }) {
             <h2>Signature offerings</h2>
             <p>{data.tags}</p>
           </div>
-          <div className="destinations-grid" style={{ marginTop: 32 }}>
+          <div className="offer-list">
             {data.offerings.map((o, i) => (
-              <article key={i} className="destination-card fade-up" style={{ padding: 24 }}>
-                <div className="destination-body">
-                  <h3 style={{ fontSize: 20 }}>{o.split("—")[0].trim()}</h3>
-                  {o.includes("—") && <p>{o.split("—").slice(1).join("—").trim()}</p>}
-                </div>
-              </article>
+              <div key={i} className="offer-item fade-up">
+                <h4>{o.split("\u2014")[0].trim()}</h4>
+                {o.includes("\u2014") && <p>{o.split("\u2014").slice(1).join("\u2014").trim()}</p>}
+              </div>
             ))}
           </div>
         </div>
