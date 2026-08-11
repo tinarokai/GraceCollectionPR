@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as WeddingsRouteImport } from './routes/weddings'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ParadisoRouteImport } from './routes/paradiso'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as CorporateRouteImport } from './routes/corporate'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -36,6 +37,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
 const ParadisoRoute = ParadisoRouteImport.update({
   id: '/paradiso',
   path: '/paradiso',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExperiencesRoute = ExperiencesRouteImport.update({
@@ -95,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/corporate': typeof CorporateRoute
   '/experiences': typeof ExperiencesRouteWithChildren
+  '/faq': typeof FaqRoute
   '/paradiso': typeof ParadisoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
@@ -109,6 +116,7 @@ export interface FileRoutesByTo {
   '/azure': typeof AzureRoute
   '/contact': typeof ContactRoute
   '/corporate': typeof CorporateRoute
+  '/faq': typeof FaqRoute
   '/paradiso': typeof ParadisoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
@@ -125,6 +133,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/corporate': typeof CorporateRoute
   '/experiences': typeof ExperiencesRouteWithChildren
+  '/faq': typeof FaqRoute
   '/paradiso': typeof ParadisoRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weddings': typeof WeddingsRoute
@@ -142,6 +151,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/corporate'
     | '/experiences'
+    | '/faq'
     | '/paradiso'
     | '/sitemap.xml'
     | '/weddings'
@@ -156,6 +166,7 @@ export interface FileRouteTypes {
     | '/azure'
     | '/contact'
     | '/corporate'
+    | '/faq'
     | '/paradiso'
     | '/sitemap.xml'
     | '/weddings'
@@ -171,6 +182,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/corporate'
     | '/experiences'
+    | '/faq'
     | '/paradiso'
     | '/sitemap.xml'
     | '/weddings'
@@ -187,6 +199,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   CorporateRoute: typeof CorporateRoute
   ExperiencesRoute: typeof ExperiencesRouteWithChildren
+  FaqRoute: typeof FaqRoute
   ParadisoRoute: typeof ParadisoRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WeddingsRoute: typeof WeddingsRoute
@@ -213,6 +226,13 @@ declare module '@tanstack/react-router' {
       path: '/paradiso'
       fullPath: '/paradiso'
       preLoaderRoute: typeof ParadisoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experiences': {
@@ -314,6 +334,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   CorporateRoute: CorporateRoute,
   ExperiencesRoute: ExperiencesRouteWithChildren,
+  FaqRoute: FaqRoute,
   ParadisoRoute: ParadisoRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   WeddingsRoute: WeddingsRoute,

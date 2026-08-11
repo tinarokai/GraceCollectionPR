@@ -33,6 +33,7 @@ export function GraceHeader({ active }: { active?: string }) {
           <a href="/experiences" className={cls("experiences")}>Experiences</a>
           <a href="/weddings" className={cls("weddings")}>Weddings</a>
           <a href="/corporate" className={cls("corporate")}>Corporate</a>
+          <a href="/faq" className={cls("faq")}>FAQ</a>
           <a href="/contact" className={cls("contact")}>Contact</a>
           <a
             href="https://villaazurevillaparadiso.guestybookings.com"
@@ -93,6 +94,7 @@ export function GraceFooter() {
               <li><a href="/experiences">Experiences</a></li>
               <li><a href="/weddings">Weddings</a></li>
               <li><a href="/corporate">Corporate</a></li>
+              <li><a href="/faq">FAQ</a></li>
               <li><a href="/contact">Contact</a></li>
             </ul>
           </div>
