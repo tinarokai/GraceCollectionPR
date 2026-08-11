@@ -63,6 +63,38 @@ const FAQS = [
     q: "How do I contact the Grace Collection?",
     a: "Call or WhatsApp +1 (954) 900-1988, email info@villaazurepr.com or info@villaparadisopr.com, or use the contact form on this site. One team handles both villas.",
   },
+  {
+    q: "What are the best things to do in San Juan?",
+    a: "Walk Old San Juan and the El Morro fortress, eat and dance at La Placita de Santurce, spend beach days right on Ocean Park, and day-trip to El Yunque rainforest. Kitesurfing, snorkeling and boat charters are all close by, and our team can arrange any of it.",
+  },
+  {
+    q: "What are the best restaurants near Ocean Park?",
+    a: "Kasalta, the legendary Ocean Park bakery and deli, is a short walk away, along with beachfront spots like Pamela's and Numero Uno Beach House. Ten minutes away, La Placita de Santurce has standouts like Santaella and Jose Enrique, plus the Lote 23 food park. In Old San Juan, Marmalade is a favorite for a dressed-up dinner.",
+  },
+  {
+    q: "Which beaches should we visit?",
+    a: "Ocean Park Beach, right in front of the villas, is one of San Juan's widest and most relaxed. Condado and Isla Verde are minutes away, Escambron is the local snorkeling spot, and Flamenco Beach on Culebra, often ranked among the world's best, makes a great day trip.",
+  },
+  {
+    q: "What day trips can we take from the villas?",
+    a: "El Yunque rainforest is about 45 minutes east. Kayak the glowing bioluminescent bay in Fajardo at night, ferry or fly to Culebra for Flamenco Beach, visit Vieques and Mosquito Bay, or graze the beachside food kiosks of Pinones just past Isla Verde.",
+  },
+  {
+    q: "Do I need a passport to visit Puerto Rico?",
+    a: "US citizens do not need a passport. Puerto Rico is a US territory, so domestic flights, US dollars, and US phone plans all work exactly like home. International visitors follow the same entry requirements as for the mainland United States.",
+  },
+  {
+    q: "When is the best time to visit Puerto Rico?",
+    a: "December through April is the dry, breezy high season. May through November is warmer and quieter with better availability, and the ocean stays swimmable all year, with temperatures around 75 to 85 degrees in every month.",
+  },
+  {
+    q: "How do we get around San Juan?",
+    a: "Uber is reliable across San Juan, and Ocean Park itself is walkable to the beach, cafes and Kasalta. You only need a rental car for day trips like El Yunque or Fajardo, and free parking is available at the villas.",
+  },
+  {
+    q: "What is the nightlife like near Ocean Park?",
+    a: "La Placita de Santurce, ten minutes away, turns into San Juan's liveliest open-air party from Thursday to Saturday. Condado has lounges and casinos, and Old San Juan mixes historic bars with salsa spots. Ocean Park itself stays quiet at night, which is exactly why guests love sleeping here.",
+  },
 ];
 
 const faqSchema = JSON.stringify({
@@ -164,8 +196,21 @@ const HTML = `<header class="site-header">
   </div>
 </section>
 
-<!-- CTA -->
+<!-- Visiting Puerto Rico -->
 <section class="section">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="eyebrow"><span class="rule"></span>Visiting Puerto Rico<span class="rule"></span></span>
+      <h2>Plan the rest of the trip.</h2>
+    </div>
+    <div class="faq-list fade-up">
+        ${faqItems(15, 23)}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-cream">
   <div class="container">
     <div class="section-head fade-up">
       <span class="eyebrow"><span class="rule"></span>Still Deciding?<span class="rule"></span></span>
