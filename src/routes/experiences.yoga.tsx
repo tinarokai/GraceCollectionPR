@@ -30,7 +30,7 @@ const data: ExperienceContent = {
     {
       title: "Full-villa retreats.",
       body:
-        "Planning a wellness retreat? Book the entire villa for your teachers and students — dedicated instructors, catered meals, and a beachfront setting that becomes your studio for the week.",
+        "Planning a wellness retreat? Book the entire villa for your teachers and students — dedicated instructors, catered meals, and a setting steps from the beach that becomes your studio for the week.",
       image: "/assets/img/paradiso-real/pool/sun-loungers.jpg",
       alt: "Sun loungers by the pool",
     },

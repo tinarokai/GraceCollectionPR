@@ -5,11 +5,11 @@ import { runGraceScripts } from "@/lib/grace-scripts";
 const FAQS = [
   {
     q: "What is the Grace Collection?",
-    a: "The Grace Collection is two boutique luxury villas on the same block in Ocean Park, San Juan, Puerto Rico: Villa Azure (The Contemporary, 7 suites) and Villa Paradiso (The Classic, 9 ocean suites). Book either villa on its own, or both together as a single 16-bedroom beachfront estate.",
+    a: "The Grace Collection is two neighboring boutique luxury villas in Ocean Park, San Juan, Puerto Rico: Villa Azure (The Contemporary, 7 suites, steps from the beach) and Villa Paradiso (The Classic, 9 suites, oceanfront with direct beach access). Book either villa on its own, or both together as a combined 16-bedroom collection of two neighboring villas.",
   },
   {
     q: "What is the difference between Villa Azure and Villa Paradiso?",
-    a: "Villa Azure is The Contemporary: 7 suites with a modern, design-forward feel. Villa Paradiso is The Classic: 9 ocean suites with a garden pavilion and a more traditional elegance. They sit on the same block, share one team, and can be combined for larger groups.",
+    a: "Villa Azure is The Contemporary: 7 suites with a modern, design-forward feel, just steps from the beach. Villa Paradiso is The Classic: 9 suites on the oceanfront with the Garden Pavilion and a more traditional elegance. They sit on the same block, share one team, and can be combined for larger groups.",
   },
   {
     q: "Where are the villas located?",
@@ -21,15 +21,15 @@ const FAQS = [
   },
   {
     q: "Can I book both villas together?",
-    a: "Yes. Booking both villas gives you a 16-bedroom estate sleeping up to 38 overnight guests under a single reservation, with two pools and one point of contact for the whole stay.",
+    a: "Yes. Booking both villas gives you a combined 16-bedroom collection sleeping up to 36 overnight guests under a single reservation, with two pools and one point of contact for the whole stay.",
   },
   {
     q: "How many guests can each villa host?",
-    a: "Each villa hosts up to 16 overnight guests: Villa Azure across 7 suites and Villa Paradiso across 9 ocean suites. For larger groups, the full-collection buyout sleeps up to 38.",
+    a: "Villa Azure accommodates up to 16 overnight guests across seven bedrooms. Villa Paradiso accommodates up to 20 overnight guests across nine bedrooms. Reserved together, the Grace Collection accommodates up to 36 overnight guests.",
   },
   {
     q: "How do I get the best rate?",
-    a: "Book directly through our booking engine, which covers both villas in one reservation flow. Direct bookings carry no OTA fees, so the best available rate is always here.",
+    a: "Book directly through our reservation system for current availability, rates, and direct assistance from our team.",
   },
   {
     q: "Do the villas have their own websites?",
@@ -45,11 +45,11 @@ const FAQS = [
   },
   {
     q: "Can I host a wedding at the Grace Collection?",
-    a: "Yes. Weddings take over both villas as a single beachfront estate: a ceremony garden, a glass pavilion, receptions for up to 200 guests, and 16 bedrooms so up to 38 of your guests stay on site.",
+    a: "Yes. Villa Paradiso can host weddings and private events, with a ceremony garden, the Garden Pavilion, and private events for up to 150 guests. For larger wedding groups, additional accommodations, or a complete destination-wedding experience, Villa Azure and Villa Paradiso may also be reserved together as the full Grace Collection, with 16 bedrooms for up to 36 overnight guests.",
   },
   {
     q: "Do you host corporate retreats?",
-    a: "Yes. Corporate buyouts get the full collection: 16 bedrooms for up to 38 attendees, two pools, event and dining spaces, and one coordinator for the whole program.",
+    a: "Yes. Corporate retreats may be hosted at Villa Azure, Villa Paradiso, or across both properties, depending on the size and requirements of the group. The full collection provides 16 bedrooms for up to 36 overnight guests, two pools, event and dining spaces, and one coordinator for the whole program.",
   },
   {
     q: "What experiences can be arranged during a stay?",
@@ -73,7 +73,7 @@ const FAQS = [
   },
   {
     q: "Which beaches should we visit?",
-    a: "Ocean Park Beach, right in front of the villas, is one of San Juan's widest and most relaxed. Condado and Isla Verde are minutes away, Escambron is the local snorkeling spot, and Flamenco Beach on Culebra, often ranked among the world's best, makes a great day trip.",
+    a: "Ocean Park Beach is directly accessible from Villa Paradiso and just steps from Villa Azure, and it is one of San Juan's widest and most relaxed. Condado and Isla Verde are minutes away, Escambron is the local snorkeling spot, and Flamenco Beach on Culebra, often ranked among the world's best, makes a great day trip.",
   },
   {
     q: "What day trips can we take from the villas?",
@@ -124,7 +124,7 @@ const HTML = `<header class="site-header">
         <button class="nav-trigger" type="button" aria-expanded="false" aria-haspopup="true">Villas <span class="caret" aria-hidden="true">▾</span></button>
         <div class="nav-menu">
           <a href="/azure"><span class="nav-menu-name">Villa Azure</span><span class="nav-menu-sub">The Contemporary · 7 suites</span></a>
-          <a href="/paradiso"><span class="nav-menu-name">Villa Paradiso</span><span class="nav-menu-sub">The Classic · 9 ocean suites</span></a>
+          <a href="/paradiso"><span class="nav-menu-name">Villa Paradiso</span><span class="nav-menu-sub">The Classic · 9 suites</span></a>
           <a href="/#both" class="nav-menu-foot">Book both villas →</a>
         </div>
       </div>

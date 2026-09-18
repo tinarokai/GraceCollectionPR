@@ -108,7 +108,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           alternateName: "The Grace Hotel Collection",
           url: "https://code-pal-post.lovable.app",
           logo: "https://code-pal-post.lovable.app/assets/img/brand/logo-stacked.png",
-          description: "Grace Collection: Villa Azure & Villa Paradiso — two boutique Caribbean villas on Ocean Park, San Juan, Puerto Rico.",
+          description: "Grace Collection: Villa Azure & Villa Paradiso — two neighboring boutique villas in Ocean Park, San Juan, Puerto Rico.",
           address: {
             "@type": "PostalAddress",
             streetAddress: "1 Calle Guerrero Noble",

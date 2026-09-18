@@ -25,7 +25,7 @@ export function GraceHeader({ active }: { active?: string }) {
               </a>
               <a href="/paradiso">
                 <span className="nav-menu-name">Villa Paradiso</span>
-                <span className="nav-menu-sub">The Classic · 9 ocean suites</span>
+                <span className="nav-menu-sub">The Classic · 9 suites</span>
               </a>
               <a href="/#both" className="nav-menu-foot">Book both villas →</a>
             </div>
@@ -67,7 +67,7 @@ export function GraceFooter() {
                 className="logo-img logo-img--stacked"
               />
             </a>
-            <p>Two beachfront villas on Ocean Park, San Juan — one place to compare, choose and reserve.</p>
+            <p>Two neighboring luxury villas in Ocean Park, San Juan. One place to compare, choose and reserve.</p>
           </div>
           <div>
             <h4>Villa Azure</h4>

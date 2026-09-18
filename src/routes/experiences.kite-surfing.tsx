@@ -7,7 +7,7 @@ const data: ExperienceContent = {
   slug: "kite-surfing",
   name: "Kite Surfing",
   eyebrow: "Experiences · Grace Collection",
-  tagline: "Ocean Park is one of Puerto Rico's best-known kiteboarding spots — and the villas sit right on the sand.",
+  tagline: "Ocean Park is one of Puerto Rico's best-known kiteboarding spots, with Villa Paradiso on the oceanfront and Villa Azure steps from the beach.",
   heroImage: "/assets/img/experiences/kitesurf-sunset.jpg",
   heroAlt: "Kitesurfing at Ocean Park Beach",
   intro:
