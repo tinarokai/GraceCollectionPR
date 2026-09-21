@@ -15,4 +15,4 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-Sitemap: https://code-pal-post.lovable.app/sitemap.xml
+Sitemap: https://gracecollectionpr.com/sitemap.xml
