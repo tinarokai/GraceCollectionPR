@@ -116,7 +116,7 @@ function faqItems(from: number, to: number) {
 const HTML = `<header class="site-header">
   <div class="header-inner">
     <a href="/" class="logo-link" aria-label="Grace Collection">
-      <img src="/assets/img/brand/logo-horizontal.png" alt="Grace Collection" class="logo-img">
+      <img src="/assets/img/brand/logo-horizontal.png?v=3" alt="Grace Collection" class="logo-img">
     </a>
     <nav class="nav">
       <a href="/">Home</a>
@@ -230,7 +230,7 @@ const HTML = `<header class="site-header">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="logo-link" aria-label="Grace Collection">
-          <img src="/assets/img/brand/logo-stacked.png" alt="Grace Collection" class="logo-img logo-img--stacked">
+          <img src="/assets/img/brand/logo-stacked.png?v=3" alt="Grace Collection" class="logo-img logo-img--stacked">
         </a>
         <p>Two boutique villas on Ocean Park, San Juan — one place to compare, choose and reserve.</p>
       </div>

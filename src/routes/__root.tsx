@@ -107,7 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "Grace Collection",
           alternateName: "The Grace Collection",
           url: "https://gracecollectionpr.com",
-          logo: "https://gracecollectionpr.com/assets/img/brand/logo-stacked.png",
+          logo: "https://gracecollectionpr.com/assets/img/brand/logo-stacked.png?v=3",
           description: "Grace Collection: Villa Azure & Villa Paradiso — two neighboring boutique villas in Ocean Park, San Juan, Puerto Rico.",
           address: {
             "@type": "PostalAddress",
