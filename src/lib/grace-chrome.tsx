@@ -8,7 +8,7 @@ export function GraceHeader({ active }: { active?: string }) {
         <a href="/" className="logo-link" aria-label="Grace Collection">
           <img
             src="/assets/img/brand/logo-horizontal.png"
-            alt="The Grace Hotel Collection"
+            alt="Grace Collection"
             className="logo-img"
           />
         </a>
@@ -63,7 +63,7 @@ export function GraceFooter() {
             <a href="/" className="logo-link" aria-label="Grace Collection">
               <img
                 src="/assets/img/brand/logo-stacked.png"
-                alt="The Grace Hotel Collection"
+                alt="Grace Collection"
                 className="logo-img logo-img--stacked"
               />
             </a>
