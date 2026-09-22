@@ -89,11 +89,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: "Grace Collection: Villa Azure & Villa Paradiso — two boutique Caribbean villas, one reservation." },
     ],
     links: [
-      { rel: "icon", href: "/favicon.ico?v=2", sizes: "any" },
-      { rel: "icon", href: "/favicon-32.png?v=2", type: "image/png", sizes: "32x32" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=2", sizes: "180x180" },
-      { rel: "icon", href: "/icon-192.png?v=2", type: "image/png", sizes: "192x192" },
-      { rel: "icon", href: "/icon-512.png?v=2", type: "image/png", sizes: "512x512" },
+      { rel: "icon", href: "/favicon.ico?v=3", sizes: "any" },
+      { rel: "icon", href: "/favicon-32.png?v=3", type: "image/png", sizes: "32x32" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=3", sizes: "180x180" },
+      { rel: "icon", href: "/icon-192.png?v=3", type: "image/png", sizes: "192x192" },
+      { rel: "icon", href: "/icon-512.png?v=3", type: "image/png", sizes: "512x512" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
