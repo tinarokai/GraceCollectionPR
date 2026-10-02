@@ -75,7 +75,7 @@ export function GraceFooter() {
               <li>5 C. Guerrero Noble<br />San Juan, PR 00913</li>
               <li><a href="tel:+19549001988">+1 (954) 900-1988</a></li>
               <li><a href="mailto:info@villaazurepr.com">info@villaazurepr.com</a></li>
-              <li><a href="https://villaazurepr.com/" target="_blank" rel="noopener">villaazurepr.com ↗</a></li>
+              <li><a href="https://villaazurehotelpr.com/" target="_blank" rel="noopener">villaazurehotelpr.com ↗</a></li>
             </ul>
           </div>
           <div>
