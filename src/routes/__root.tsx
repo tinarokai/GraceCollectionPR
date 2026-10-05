@@ -121,7 +121,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             postalCode: "00913",
             addressCountry: "PR",
           },
-          sameAs: ["https://villaazurepr.com/", "https://villaparadisopr.com/"],
+          sameAs: ["https://villaazurehotelpr.com/", "https://villaparadisopr.com/"],
         }),
       },
       {

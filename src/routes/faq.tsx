@@ -33,7 +33,7 @@ const FAQS = [
   },
   {
     q: "Do the villas have their own websites?",
-    a: "Yes. Villa Azure is at villaazurepr.com and Villa Paradiso is at villaparadisopr.com, each with full photo galleries and details. This site is the place to compare the two and book them together.",
+    a: "Yes. Villa Azure is at villaazurehotelpr.com and Villa Paradiso is at villaparadisopr.com, each with full photo galleries and details. This site is the place to compare the two and book them together.",
   },
   {
     q: "What are the check-in and check-out times?",

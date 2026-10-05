@@ -42,9 +42,10 @@ export function runGraceScripts(): () => void {
   const outEl = document.getElementById("checkout") as HTMLInputElement | null;
   const guestsEl = document.getElementById("guests") as HTMLSelectElement | null;
 
+  // Each villa's Guesty booking engine (villaazurepr.com now redirects to the hotel homepage).
   const SITES: Record<string, string> = {
-    azure: "https://villaazurepr.com/",
-    paradiso: "https://villaparadisopr.com/",
+    azure: "https://villaazure.guestybookings.com/en/properties",
+    paradiso: "https://villaparadisopr.guestybookings.com/en/properties",
   };
 
   function syncCtas() {
@@ -55,9 +56,9 @@ export function runGraceScripts(): () => void {
       const which = a.dataset.book as keyof typeof SITES;
       if (!which || !SITES[which]) return;
       const url = new URL(SITES[which]);
-      if (ci) url.searchParams.set("check_in", ci);
-      if (co) url.searchParams.set("check_out", co);
-      if (g) url.searchParams.set("guests", g);
+      if (ci) url.searchParams.set("checkIn", ci);
+      if (co) url.searchParams.set("checkOut", co);
+      if (g) url.searchParams.set("minOccupancy", g);
       a.href = url.toString();
     });
   }
