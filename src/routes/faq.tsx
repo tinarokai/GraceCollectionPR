@@ -61,7 +61,7 @@ const FAQS = [
   },
   {
     q: "How do I contact the Grace Collection?",
-    a: "Call or WhatsApp +1 (954) 900-1988, email info@villaazurepr.com or info@villaparadisopr.com, or use the contact form on this site. One team handles both villas.",
+    a: "Call +1 (954) 900-1988 or WhatsApp +1 (561) 289-2565, email info@villaazurepr.com or info@villaparadisopr.com, or use the contact form on this site. One team handles both villas.",
   },
   {
     q: "What are the best things to do in San Juan?",
