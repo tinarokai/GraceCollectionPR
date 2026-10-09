@@ -61,7 +61,7 @@ const FAQS = [
   },
   {
     q: "How do I contact the Grace Collection?",
-    a: "Call +1 (954) 900-1988 or WhatsApp +1 (561) 289-2565, email info@villaazurepr.com or info@villaparadisopr.com, or use the contact form on this site. One team handles both villas.",
+    a: "Call +1 (305) 748-5748 or WhatsApp +1 (305) 748-5748, email info@villaazurepr.com or info@villaparadisopr.com, or use the contact form on this site. One team handles both villas.",
   },
   {
     q: "What are the best things to do in San Juan?",
@@ -238,7 +238,7 @@ const HTML = `<header class="site-header">
         <h4>Villa Azure</h4>
         <ul>
           <li>5 C. Guerrero Noble<br>San Juan, PR 00913</li>
-          <li><a href="tel:+19549001988">+1 (954) 900-1988</a></li>
+          <li><a href="tel:+13057485748">+1 (305) 748-5748</a></li>
           <li><a href="mailto:info@villaazurepr.com">info@villaazurepr.com</a></li>
           <li><a href="https://villaazurehotelpr.com/" target="_blank" rel="noopener">villaazurehotelpr.com ↗</a></li>
         </ul>
@@ -247,7 +247,7 @@ const HTML = `<header class="site-header">
         <h4>Villa Paradiso</h4>
         <ul>
           <li>1 Calle Guerrero Noble<br>San Juan, PR 00913</li>
-          <li><a href="tel:+19549001988">+1 (954) 900-1988</a></li>
+          <li><a href="tel:+13057485748">+1 (305) 748-5748</a></li>
           <li><a href="mailto:info@villaparadisopr.com">info@villaparadisopr.com</a></li>
           <li><a href="https://villaparadisopr.com/" target="_blank" rel="noopener">villaparadisopr.com ↗</a></li>
         </ul>
